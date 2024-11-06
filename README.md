@@ -10,7 +10,22 @@
 - **Example**: 
   - To create a counter:
     ```javascript
-    const [counter, setCounter] = useState(0);
+    import React, { useState } from 'react';
+
+function Counter() {
+  const [counter, setCounter] = useState(0);
+
+  const increaseCounter = () => setCounter(counter + 1);
+
+  return (
+    <div>
+      <p>Counter: {counter}</p>
+      <button onClick={increaseCounter}>Increment</button>
+    </div>
+  );
+}
+
+export default Counter;
     ```
   - This initializes `counter` to 0 and provides `setCounter` to update its value .
 
@@ -32,7 +47,32 @@
   - **Without Dependencies**: Runs after every render.
   - **With Empty Array**: Runs only once after the initial render.
   - **With Variables**: Runs when specified variables change .
+     ```javascript
+import React, { useState, useEffect } from 'react';
 
+function DataFetcher() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('https://api.example.com/data')
+      .then((response) => response.json())
+      .then((data) => setData(data));
+  }, []); // Empty dependency array means this runs once on mount
+
+  return (
+    <div>
+      <h2>Fetched Data:</h2>
+      <ul>
+        {data.map((item) => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default DataFetcher;
+ 
 **5. Cleanup Function**
 - **Importance**: Cleanup functions are essential for preventing memory leaks, especially when using timers or subscriptions .
 - **Example**: 
@@ -49,6 +89,26 @@
   1. Create context using `createContext()`.
   2. Provide context using the context provider.
   3. Consume context in child components using `useContext()` .
+import React, { createContext, useContext } from 'react';
+
+const ThemeContext = createContext();
+
+function ThemedComponent() {
+  const theme = useContext(ThemeContext);
+  return <div style={{ backgroundColor: theme.background }}>Hello World</div>;
+}
+
+function App() {
+  const theme = { background: 'lightblue' };
+
+  return (
+    <ThemeContext.Provider value={theme}>
+      <ThemedComponent />
+    </ThemeContext.Provider>
+  );
+}
+
+export default App;
 
 **7. useRef Hook**
 - **Definition**: The `useRef` hook allows access to DOM elements and creates mutable variables that do not trigger re-renders .
@@ -56,6 +116,23 @@
   ```javascript
   const inputRef = useRef(null);
   ```
+  import React, { useRef } from 'react';
+
+function InputFocus() {
+  const inputRef = useRef(null);
+
+  const focusInput = () => inputRef.current.focus();
+
+  return (
+    <div>
+      <input ref={inputRef} type="text" placeholder="Type something..." />
+      <button onClick={focusInput}>Focus Input</button>
+    </div>
+  );
+}
+
+export default InputFocus;
+
   This can be used to directly manipulate the DOM element .
 
 **8. Summary of Key Concepts**
@@ -76,6 +153,22 @@ This study guide provides a concise overview of React Hooks, their definitions, 
   ```javascript
   const inputElement = useRef(initialValue);
   ```
+  import React, { useRef } from 'react';
+
+function InputFocus() {
+  const inputRef = useRef(null);
+
+  const focusInput = () => inputRef.current.focus();
+
+  return (
+    <div>
+      <input ref={inputRef} type="text" placeholder="Type something..." />
+      <button onClick={focusInput}>Focus Input</button>
+    </div>
+  );
+}
+
+export default InputFocus;
 - **Accessing Properties**: You can access the current property to manipulate the DOM element:
   ```javascript
   inputElement.current.style.width = '300px';
