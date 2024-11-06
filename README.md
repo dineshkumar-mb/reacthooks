@@ -72,7 +72,8 @@ function DataFetcher() {
 }
 
 export default DataFetcher;
- 
+ ```
+```
 **5. Cleanup Function**
 - **Importance**: Cleanup functions are essential for preventing memory leaks, especially when using timers or subscriptions .
 - **Example**: 
@@ -89,6 +90,8 @@ export default DataFetcher;
   1. Create context using `createContext()`.
   2. Provide context using the context provider.
   3. Consume context in child components using `useContext()` .
+     ```
+     
 import React, { createContext, useContext } from 'react';
 
 const ThemeContext = createContext();
@@ -109,7 +112,8 @@ function App() {
 }
 
 export default App;
-
+```
+```
 **7. useRef Hook**
 - **Definition**: The `useRef` hook allows access to DOM elements and creates mutable variables that do not trigger re-renders .
 - **Example**: 
@@ -132,7 +136,8 @@ function InputFocus() {
 }
 
 export default InputFocus;
-
+```
+```
   This can be used to directly manipulate the DOM element .
 
 **8. Summary of Key Concepts**
@@ -153,6 +158,7 @@ This study guide provides a concise overview of React Hooks, their definitions, 
   ```javascript
   const inputElement = useRef(initialValue);
   ```
+  
   import React, { useRef } from 'react';
 
 function InputFocus() {
@@ -169,6 +175,8 @@ function InputFocus() {
 }
 
 export default InputFocus;
+```
+```
 - **Accessing Properties**: You can access the current property to manipulate the DOM element:
   ```javascript
   inputElement.current.style.width = '300px';
