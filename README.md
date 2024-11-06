@@ -37,22 +37,21 @@ export default Counter;
 ```
 \- Create a counter component using \`useState\`:
 
-\`\`\`javascript
+```javascript
 
 const \[counter, setCounter\] = useState(0);
 ```
 \- Increment the counter:
 
-\`\`\`javascript
+```javascript
 
 const increaseCounter = () =\> setCounter(counter + 1);
 
-\`\`\`
+```
 
 \- This updates the displayed counter value when the button is clicked .
 
 \*\*3. Handling Objects with useState\*\*
-```
 ```javascript
 import React, { useState } from 'react';
 
@@ -142,7 +141,7 @@ to clean up side effects when the component unmounts .
 \- \*\*Purpose\*\*: \`useContext\` is used for managing global data in a
 React application, avoiding the need to pass props through multiple
 layers of components .
-```
+```javascript
 import React, { createContext, useContext } from 'react';
 
 const ThemeContext = createContext();
@@ -178,7 +177,7 @@ value in any component .
 
 \- \*\*Purpose\*\*: \`useRef\` allows access to DOM elements and creates
 mutable variables that do not cause re-renders .
-```
+```javascript
 import React, { useRef } from 'react';
 
 function InputFocus() {
@@ -259,7 +258,7 @@ or update the DOM element\'s properties .
 
 \- \*\*Purpose\*\*: Manages state in React applications, functioning as
 a state management tool. Ideal for complex state logic.
-```
+```javascript
 import React, { useReducer } from 'react';
 
 const initialState = { count: 0 };
@@ -309,7 +308,7 @@ increment and decrement actions .
 \- \*\*Purpose\*\*: Similar to \`useEffect\`, but runs synchronously
 before the DOM is painted. Useful for measuring elements or performing
 layout calculations.
-```
+```javascript
 import React, { useLayoutEffect, useRef, useState } from 'react';
 
 function LayoutComponent() {
@@ -375,7 +374,7 @@ avoid unnecessary recalculations .
 
 \- \*\*Purpose\*\*: Returns a memoized callback function, preventing
 function recreation on re-renders.
-```
+```javascript
 import React, { useState, useCallback } from 'react';
 
 function List({ getItems }) {
@@ -465,5 +464,6 @@ export default App;
 \- React hooks enhance functional components by managing state and side
 effects efficiently.
 
-\- Understanding when and how to use each hook is crucial for building
-performant R
+\- Understanding when and how to use each hook is crucial for building and performance of React applications. 
+
+**Conclusion**: Understanding these hooks is essential for managing state and side effects in React applications effectively. Use them to write cleaner, more efficient code.
