@@ -3,18 +3,18 @@
 
 - \*\*Definition\*\*: Hooks are functions that enable functional
 components to manage state and lifecycle methods, similar to class
-components .
+components.
 
 - \*\*Purpose\*\*: They simplify the way developers can use state and
-other React features without needing to convert components to classes .
+other React features without needing to convert components to classes.
 
 \*\*2. useState Hook\*\*
 
 - \*\*Purpose\*\*: The \`useState\` hook allows you to add state to
-functional components .
+functional components.
 
 - \*\*State Definition\*\*: State refers to the values or variables
-that determine the component\'s behavior and rendering .
+that determine the component\'s behavior and rendering.
 
 \- \*\*Example\*\*:
 ```javascript
